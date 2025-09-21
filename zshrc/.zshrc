@@ -10,7 +10,20 @@ export SUDO_EDITOR="$EDITOR"
 export PGHOST="/var/run/postgresql"
 
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/bin
 
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+export PATH=$PATH:$JAVA_HOME/bin
+
+export PNPM_HOME="/home/kami/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
 # k8
 # source <(kubectl completion zsh)
 
@@ -43,3 +56,18 @@ SAVEHIST=50000
 setopt inc_append_history
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# bun completions
+[ -s "/home/kami/.bun/_bun" ] && source "/home/kami/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/kami/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end

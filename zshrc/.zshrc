@@ -11,6 +11,7 @@ export PGHOST="/var/run/postgresql"
 
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/$HOME/.cargo/bin
 
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -71,3 +72,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# opencode
+export PATH=/home/kami/.opencode/bin:$PATH
